@@ -25,9 +25,7 @@ Daftar Library yang digunakan:
 
 ```
 Backend:
-mysqlclient
-MySQL-python
-mysql-connector-python
+
 flask
 Flask-SQLAlchemy
 flask-restful
@@ -38,6 +36,9 @@ flask-cors
 flask-sieve
 pymysql
 Flask-script
+mysqlclient
+MySQL-python
+mysql-connector-python
 
 Frontend:
 NextJs
