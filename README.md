@@ -36,9 +36,6 @@ flask-cors
 flask-sieve
 pymysql
 Flask-script
-mysqlclient
-MySQL-python
-mysql-connector-python
 
 Frontend:
 NextJs
