@@ -34,7 +34,6 @@ requests
 python-dotenv
 flask-cors
 flask-sieve
-pymysql
 Flask-script
 
 Frontend:
