@@ -71,5 +71,4 @@ pokemon detail
 - NextJS framework
 - NodeJS
 - TailwindCSS
-- Git
 - npm
