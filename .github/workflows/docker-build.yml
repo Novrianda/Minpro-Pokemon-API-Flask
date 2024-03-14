@@ -1,0 +1,38 @@
+name: Docker Publish
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  publish:
+    name: Publish Docker images
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 18
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push Next.js Docker image
+      working-directory: ./frontend
+      run: |
+        docker build -t candraburhanudin15/pokecanovfrontend:latest -f next.dockerfile .
+        docker push candraburhanudin15/pokecanovfrontend:latest
+
+    - name: Build and push Flask Docker image
+      working-directory: ./backend
+      run: |
+        docker build -t candraburhanudin15/pokecanov:1.0.0 -f flask.dockerfile .
+        docker push candraburhanudin15/pokecanov:1.0.0
